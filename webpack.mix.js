@@ -11,5 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')		
+	// .js('resources/js/main.js','public/js')	
+	.sass('resources/sass/app.scss', 'public/css')	
+	.copyDirectory('resources/img','public/img')
+	.copyDirectory('resources/icon-fonts','public/icon-fonts')
+	.copyDirectory('node_modules/mdbootstrap/css', 'public/vendor/mdbootstrap/css')
+	.copyDirectory('node_modules/mdbootstrap/font', 'public/vendor/mdbootstrap/font')
+	.copyDirectory('node_modules/mdbootstrap/js', 'public/vendor/mdbootstrap/js')
+	
+	if (mix.inProduction()) {
+    	mix.version();
+	}
