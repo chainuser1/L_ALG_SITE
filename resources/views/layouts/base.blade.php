@@ -39,75 +39,77 @@
 						<!-- <img src="../assets/vendors//img/logo.png" alt=""> -->
 					</a>
 					<nav class="top-nav-area w-100">
-						<div class="user-panel">
-							<a href="">Login</a> / <a href="">Register</a>
-						</div>
+						<ul class="main-menu user-panel">
+							<li><a href="#account">Account</a>
+								<ul class="sub-menu">
+									<li><a href="#">Login</a></li><li><a href="#">Register</a></li>
+								</ul>
+							</li>
+						</ul>
 						<ul class="main-menu primary-menu">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Games</a>
 						</li>
 						<li><a href="#">Reviews</a></li>
 						<li><a href="#">Selections</a>
-							<ul class="sub-menu">
-								<li><a href="#">Short Stories</a></li>
-								<li><a href="#">Essays</a></li>
-								<li><a href="#">Articles</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
+						<ul class="sub-menu">
+							<li><a href="#">Short Stories</a></li>
+							<li><a href="#">Essays</a></li>
+							<li><a href="#">Articles</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
 		</div>
-	</header>
-	<main class="py-6">
-		@yield('content')
-	</main>
-	<footer class="footer-section">
-		<div class="container">
-			<!-- <div class="footer-left-pic">
+	</div>
+</header>
+<main class="py-6">
+	@yield('content')
+</main>
+<footer class="footer-section">
+	<div class="container">
+		<!-- <div class="footer-left-pic">
 				<img src="../assets/vendors/img/footer-left-pic.png" alt="">
-			</div>
-			<div class="footer-right-pic">
-				<img src="../assets/vendors/img/footer-right-pic.png" alt="">
-			</div> -->
-			<!-- <a href="#" class="footer-logo">
-				<img src="../assets/vendors/img/logo.png" alt="">
-			</a> -->
-			<ul class="main-menu footer-menu">
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Programmes</a></li>
-			</ul>
-			<div class="footer-social d-flex justify-content-center">
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-dribbble"></i></a>
-				<a href="#"><i class="fa fa-behance"></i></a>
-			</div>
-			<div class="copyright"><a href="">
-				Copyright &copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_self">Province of Leyte</a>
-			</div>
 		</div>
-	</footer>
-	
+		<div class="footer-right-pic">
+				<img src="../assets/vendors/img/footer-right-pic.png" alt="">
+		</div> -->
+		<!-- <a href="#" class="footer-logo">
+				<img src="../assets/vendors/img/logo.png" alt="">
+		</a> -->
+		<ul class="main-menu footer-menu">
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Programmes</a></li>
+		</ul>
+		<div class="footer-social d-flex justify-content-center">
+			<a href="#"><i class="fa fa-pinterest"></i></a>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-dribbble"></i></a>
+			<a href="#"><i class="fa fa-behance"></i></a>
+		</div>
+		<div class="copyright"><a href="">
+			Copyright &copy;<script type="text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_self">Province of Leyte</a>
+		</div>
+	</div>
+</footer>
 
-	<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/bootstrap.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/mdb.min.js') }}"></script>
-	<script src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="78225a9936e2aafa5e1583f7-text/javascript"></script>
-	<script type="text/javascript" src="{{ asset('js/magnific-popup.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/slicknav.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/sticky-sidebar.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/rocket-loader.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-	
-	<script type="text/javascript">
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-23581568-13');
+<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/mdb.min.js') }}"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="78225a9936e2aafa5e1583f7-text/javascript"></script>
+<script type="text/javascript" src="{{ asset('js/magnific-popup.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/slicknav.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/sticky-sidebar.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/rocket-loader.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 
-	</script>
+<script type="text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-23581568-13');
+</script>
 </body>
 </html>
