@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Auth::routes(['verify'=>true]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('user')->group(function(){
+	Route::get('username','VerifyUserRegisterController@validateUsername')->name('username');
+});
