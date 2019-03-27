@@ -19,7 +19,7 @@ class VerifyUserRegisterController extends Controller
     	}
     	else{
     		return response()->json(['message'=>'Username is invalid',
-    			'status'=> 'false', 'class'=>'red-text'],200);
+    			'status'=> 'false', 'class'=>'orange-text'],200);
     	}
     }
 

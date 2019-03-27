@@ -45,8 +45,8 @@
 							@guest
 							<li><a href="#account">Account</a>
 							<ul class="sub-menu">
-								<li><a href="#" data-toggle="modal" data-target="#modalLoginForm">Login</a></li>
-								<li><a href="#" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
+								<li><a href="#login" data-toggle="modal" data-target="#modalLoginForm">Login</a></li>
+								<li><a href="#register" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
 							</ul>
 							@else
 							<li><a href="#account">{{ Auth::user()->username }}</a>
