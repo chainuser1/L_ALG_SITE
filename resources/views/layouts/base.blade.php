@@ -133,7 +133,7 @@
         </div>
         <div class="md-form mb-4">
           <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="orangeForm-confirm_pass" class="form-control validateConfirm">
+          <input type="password" id="orangeForm_confirm_pass" class="form-control validateConfirm">
           <label data-error="wrong" data-success="right" for="orangeForm-confirm_pass">Confirm password</label>
         </div>
       </div>
