@@ -26,12 +26,12 @@ class VerifyUserRegisterController extends Controller
     public function validateEmail(Request $req){
     	$user=User::where('email','=',$req->email)->get();
     	if($user->isEmpty()){
-    		return response()->json(['message'=>'Email is valid',
-    			'status'=> 'true', 'class'=>'green-text'],200);
+    		return response()->json([
+    			'status'=> true],200);
     	}
     	else{
-    		return response()->json(['message'=>'Email is already used.',
-    			'status'=> 'false', 'class'=>'orange-text'],200);
+    		return response()->json([
+    			'status'=> false],200);
     	}
     }
 

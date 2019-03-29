@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -36,7 +36,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
+    //override login method
     public function authenticated(Request $request, $user)
     {
         if (!$user->verified) {
@@ -45,4 +45,11 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectPath());
     }
+    
+    //@override login method from authenticable
+    public function login(Request $req){
+
+    }
+
+
 }
