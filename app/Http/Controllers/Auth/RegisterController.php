@@ -80,7 +80,18 @@ class RegisterController extends Controller
 
         return $user;
     }
-
+    //register user @override
+    public function register(Request $request){
+        $validator = $this->validator($request->all());
+        if($validator->fails()){
+            $errors=$validator->errors();
+            return response()->json(['error'=>'Make sure all fields are valid.'],422);
+        }
+        $this->registered($request, $user=$this->create($request->all()));
+        return response()->json([
+            'status'=>'Please verify your email address to activate account'
+        ], 200);
+    }
 
     // verify user
     public function verifyUser($token)
@@ -105,7 +116,6 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
         $this->guard()->logout();
-        return redirect('/login')->with('status', 'We sent you an activation code. Check your email and click on the link to verify.');
     }
 
     

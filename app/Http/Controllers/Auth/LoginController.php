@@ -34,7 +34,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except(['logout']);
     }
     //override login method
     public function authenticated(Request $request, $user)
@@ -48,8 +48,23 @@ class LoginController extends Controller
     
     //@override login method from authenticable
     public function login(Request $req){
+        $credentials=$req->only('username','password');
+        $auth=Auth::attempt($credentials, $req->has('remember'));
+
+        if($auth){
+            $req->session()->regenerate();
+            return response()->json(['success'=>true,'message'=>'Signed In...'],200);
+        }
+        return response()->json(['success'=>false,'message'=>'Please check your credentials'],404);
+    }
+    //@override logout
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        //redirect after logout to home page
+        return redirect('/');
 
     }
-
-
 }
