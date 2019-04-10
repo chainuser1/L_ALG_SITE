@@ -97,7 +97,7 @@
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										<i class="nc-icon nc-bell-55"></i>
 										<p>
-											<span class="d-lg-none d-md-block">Some Actions</span>
+											<span class="d-lg-none d-md-block">Notifications</span>
 										</p>
 									</a>
 									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -110,7 +110,7 @@
 									<a class="nav-link btn-rotate" href="#pablo">
 										<i class="nc-icon nc-settings-gear-65"></i>
 										<p>
-											<span class="d-lg-none d-md-block">Account</span>
+											<span class="d-lg-none d-md-block">Account Settings</span>
 										</p>
 									</a>
 								</li>
