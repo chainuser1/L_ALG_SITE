@@ -21,12 +21,13 @@
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/style.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/paper-dashboard.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/admin-prime.css') }}">
 	</head>
 	<body>
 		<div id="preloder">
 			<div class="loader" ></div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper purple" >
 			<div class="sidebar " data-color="white" data-active-color="primary">
 				<!-- logo -->
 				<div class="logo">
@@ -46,10 +47,12 @@
 				<div class="sidebar-wrapper">
 					<ul class="nav">
 						<li class="active">
-							<a href="#" class="nc-icon nc-bank">Dashboard</a>
+							<i class="nc-icon nc-bank"></i>
+							<a href="{{ route('dashboard') }}">Dashboard</a>
 						</li>
 						<li>
-							<a href="#" class="nc-icon nc-bank">Upload a Game</a>
+							<i class="nc-icon nc-bank"></i>
+							<a href="#">Upload a Game</a>
 						</li>
 					</ul>
 				</div>
@@ -66,7 +69,7 @@
 								<span class="navbar-toggler-bar bar3"></span>
 								</button>
 							</div>
-							<a class="navbar-brand" href="#{{ Auth->user()->username }}">Admin Panel</a>
+							<a class="navbar-brand" href="#{{ Auth::user()->username }}">Admin Panel</a>
 						</div>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-bar navbar-kebab"></span>
@@ -100,11 +103,11 @@
 											<span class="d-lg-none d-md-block">Notifications</span>
 										</p>
 									</a>
-									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+									<!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 										<a class="dropdown-item" href="#">Action</a>
 										<a class="dropdown-item" href="#">Another action</a>
 										<a class="dropdown-item" href="#">Something else here</a>
-									</div>
+									</div> -->
 								</li>
 								<li class="nav-item">
 									<a class="nav-link btn-rotate" href="#pablo">
@@ -118,6 +121,9 @@
 						</div>
 					</div>
 				</nav>
+				<div class="content">
+					@yield('content')
+				</div>
 			</div>
 			<!-- scripts -->
 			<script src="{{ asset('vendor/mdbootstrap/js/jquery-3.3.1.min.js') }}"></script>
@@ -132,5 +138,7 @@
 			<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/fetch_setup.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/paper-dashboard.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/scrollbar-jquery.min.js') }}"></script>
+			<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 		</body>
 	</html>

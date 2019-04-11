@@ -18,7 +18,7 @@ Route::get('/', function () {
 // Authentication Routes...
 Route::get('login', [
   'as' => 'login',
-  'uses' => 'Auth\LoginController@showLoginForm'
+  'uses' => 'Auth\LoginController@index'
 ]);
 Route::post('login', [
   'as' => 'signin',
@@ -66,6 +66,9 @@ Route::prefix('user')->group(function(){
 	Route::get('email','VerifyUserRegisterController@validateEmail')->name('email');
 });
 
+Route::prefix('admin')->group(function(){
+  Route::get('dashboard','AdminController@index')->name('dashboard');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

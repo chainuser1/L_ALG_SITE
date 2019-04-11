@@ -7,17 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
+   
     use AuthenticatesUsers;
 
     /**
@@ -55,7 +45,7 @@ class LoginController extends Controller
             $req->session()->regenerate();
             return response()->json(['success'=>true,'message'=>'Signed In...'],200);
         }
-        return response()->json(['success'=>false,'message'=>'Please check your credentials'],404);
+        return response()->json(['success'=>false,'message'=>'Please check your credentials'],202);
     }
     //@override logout
     public function logout(Request $request)
