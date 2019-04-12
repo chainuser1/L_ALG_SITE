@@ -15,7 +15,7 @@ class AdminController extends Controller
 		return view('admin/dashboard');
 	}
     public function getAllUsers(Request $request){
-    	return DB::select('users')->get()->toJson();
+    	return response()->json(['num_users'=> count(User::all())],200);
     }
 
     public function uploadGame(Request $request) {

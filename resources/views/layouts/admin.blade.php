@@ -24,6 +24,9 @@
 		<link rel="stylesheet" href="{{ asset('css/admin-prime.css') }}">
 	</head>
 	<body>
+		<script src="{{ asset('js/manifest.js') }}"></script>
+		<script src="{{ asset('js/vendor.js') }}"></script>
+		<script src="{{ asset('js/app.js') }}"></script>
 		<div id="preloder">
 			<div class="loader" ></div>
 		</div>
@@ -139,6 +142,6 @@
 			<script type="text/javascript" src="{{ asset('js/fetch_setup.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/paper-dashboard.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/scrollbar-jquery.min.js') }}"></script>
-			<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+			
 		</body>
 	</html>

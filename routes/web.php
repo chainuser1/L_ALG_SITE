@@ -68,6 +68,7 @@ Route::prefix('user')->group(function(){
 
 Route::prefix('admin')->group(function(){
   Route::get('dashboard','AdminController@index')->name('dashboard');
+  Route::get('users','AdminController@getAllUsers')->name('num_users');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
