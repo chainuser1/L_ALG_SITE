@@ -1,15 +1,19 @@
 @extends('..layouts/admin')
 @section('content')
 <div class="row">
-		<div class="col-md-3" id="num_users" style="border-style:ridge; border-radius:50%;">
-			<div v-if="loading">
-				<p class="orange-text">Loading...</p>
+		<div class="col-sm-1 purple-gradient text-white " id="num_users" style="border-style:ridge; border-radius:10%;">
+			<p class="d-flex justify-content-center">Total Users</p>
+			<div v-if="loading" class="d-flex justify-content-center">
+				<p >Loading...</p>
 			</div>
-			<div v-else>
-				<h1  class="orange-text" >{users}</h1>
+			<div v-else class="d-flex justify-content-center" style="padding-top:9px;">
+				<h5><b>{users}</b></h5>
 			</div>
-			<p class="orange-text">No. of Users</p>
+			
 			{getUserCount()}
+		</div>
+		<div class="col-sm-1 purple-gradient text-white " id="num_students" style="border-style:ridge; border-radius:10%;">
+			
 		</div>
 </div>
 <script>
@@ -32,6 +36,9 @@
 						loading=false;
 						console.dir(error)
 					})
+					if(this.users>=1000){
+						this.users=1000+'+';
+					}
 				}
 		},
 	})
