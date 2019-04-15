@@ -15,7 +15,7 @@ class CreateExercisesTable extends Migration
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pdf_location'.150);
+            $table->string('pdf_location',150);
             $table->string('flash_location',150);
             $table->string('answer',150);
             $table->softDeletes();
