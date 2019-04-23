@@ -52,7 +52,6 @@ class LoginController extends Controller
     {
         Auth::logout();
         $request->session()->flush();
-        $request->session()->regenerate(true);
         //redirect after logout to home page
         return redirect('/');
 
