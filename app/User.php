@@ -11,12 +11,17 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+    The attributes will have default values
+    @var array
+    */
+    protected $attributes = ['user_type'=>'Student'];
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-       'username', 'email', 'password',
+       'username', 'email', 'password','user_Type',
     ];
 
     /**
@@ -45,4 +50,5 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\VerifyUser');
     }
-}
+
+  } 

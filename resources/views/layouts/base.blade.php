@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,9 @@
 		<meta name="keywords" content="alg,Gaming, magazine, html, reading comprehension">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
 		@yield('title')
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/mdb.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
@@ -18,10 +17,14 @@
 		<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/style.min.css') }}">
-		
+		<link rel="stylesheet" href="{{ asset('css/app.css') }}"
 	</head>
 	<body>
-		<script src="{{ asset('vendor/mdbootstrap/js/jquery-3.3.1.min.js') }}"></script>
+
+		<script src="{{ asset('js/core/jquery.min.js') }}" ></script>
+		<script src="{{ asset('js/manifest.js') }}"></script>
+		<script src="{{ asset('js/vendor.js') }}"></script>
+		<script src="{{ asset('js/app.js') }}" ></script>
 		<div id="preloder">
 			<div class="loader"></div>
 		</div>
@@ -192,8 +195,7 @@ aria-hidden="true">
 </div>
 </div>
 </footer>
-<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/mdb.min.js') }}"></script>
+
 <script src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="78225a9936e2aafa5e1583f7-text/javascript"></script>
 <script type="text/javascript" src="{{ asset('js/magnific-popup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>

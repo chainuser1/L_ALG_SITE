@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
@@ -12,22 +12,20 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 		<!-- CSS here -->
-		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/mdb.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/style.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/paper-dashboard.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/admin-prime.css') }}">
 	</head>
 	<body>
 		<script src="{{ asset('js/manifest.js') }}"></script>
 		<script src="{{ asset('js/vendor.js') }}"></script>
-		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/app.js') }}" defer></script>
 		<div id="preloder">
 			<div class="loader" ></div>
 		</div>
@@ -143,6 +141,6 @@
 			<script type="text/javascript" src="{{ asset('js/fetch_setup.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/paper-dashboard.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/scrollbar-jquery.min.js') }}"></script>
-			
+			<script src="{{ mix('js/app.js') }}"></script>
 		</body>
 	</html>
