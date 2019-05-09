@@ -1,7 +1,6 @@
 <template>
 <div class="row text-info">
 	<div class="col-sm" >
-		{{ refreshComponent() }}
 		<p class="d-flex justify-content-left">Registered Users</p>
 		<div v-if="loading" class="d-flex justify-content-center">
 			<p >Loading...</p>
@@ -46,6 +45,9 @@
 			<h5 class="green-text"><b>{{ logged_users }}</b></h5>
 		</div>
 	</div>
+	<!-- <div class="col-sm">
+		<button class="btn btn-primary" v-on:click="refreshDashboard">Refresh</button>
+	</div> -->
 </div>
 </template>
 <script>
@@ -58,35 +60,38 @@
 				logged_devices:0,
 				logged_users:0,
 				loading:false,
+				intervalid1:'',
 			}
 		},
-		mounted(){
-			console.log("Unable to master")
+		mounted (){
+			this.refreshDashboard()
 		},
 		methods: {
-			refreshComponent(){
-				setInterval(function(){
-				var url=$("meta[name='clostro']").attr('content');
-					this.loading=true;
-					axios.get(url)
-					.then(res => {
-						this.loading=false;
-						this.users = res.data.num_users;
-						this.students = res.data.num_students
-						this.admin = res.data.num_admin
-						this.logged_devices=res.data.logged_devices
-						this.logged_users=res.data.logged_users
+			refreshDashboard(){
+					this.intervalid1 = setInterval(() => {
+						var url=$("meta[name='clostro']").attr('content');
+						this.loading=true;
+						axios.get(url)
+						.then(res => {
+							this.loading=false;
+							this.users = res.data.num_users;
+							this.students = res.data.num_students
+							this.admin = res.data.num_admin
+							this.logged_devices=res.data.logged_devices
+							this.logged_users=res.data.logged_users
 
-					}).catch(error => {
-						this.loading=false;
-						console.dir(error)
-					})
-					if(this.users>=1000){
-						this.users=1000+'+';
-					}		
-				this.$methods.refreshComponent();
-				},2500)
-			}
+						}).catch(error => {
+							this.loading=false;
+							console.dir(error)
+						})
+						if(this.users>=1000){
+							this.users=1000+'+';
+						}	
+					},10000)	
+			},
+			
+
 		}
+		
 	}
 </script>

@@ -59,6 +59,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -67,19 +69,20 @@ __webpack_require__.r(__webpack_exports__);
       admin: 0,
       logged_devices: 0,
       logged_users: 0,
-      loading: false
+      loading: false,
+      intervalid1: ''
     };
   },
   mounted: function mounted() {
-    console.log("Unable to master");
+    this.refreshDashboard();
   },
   methods: {
-    refreshComponent: function refreshComponent() {
-      setInterval(function () {
-        var _this = this;
+    refreshDashboard: function refreshDashboard() {
+      var _this = this;
 
+      this.intervalid1 = setInterval(function () {
         var url = $("meta[name='clostro']").attr('content');
-        this.loading = true;
+        _this.loading = true;
         axios.get(url).then(function (res) {
           _this.loading = false;
           _this.users = res.data.num_users;
@@ -92,12 +95,10 @@ __webpack_require__.r(__webpack_exports__);
           console.dir(error);
         });
 
-        if (this.users >= 1000) {
-          this.users = 1000 + '+';
+        if (_this.users >= 1000) {
+          _this.users = 1000 + '+';
         }
-
-        this.$methods.refreshComponent();
-      }, 2500);
+      }, 10000);
     }
   }
 });
@@ -24818,7 +24819,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row text-info" }, [
     _c("div", { staticClass: "col-sm" }, [
-      _vm._v("\r\n\t\t" + _vm._s(_vm.refreshComponent()) + "\r\n\t\t"),
       _c("p", { staticClass: "d-flex justify-content-left" }, [
         _vm._v("Registered Users")
       ]),
