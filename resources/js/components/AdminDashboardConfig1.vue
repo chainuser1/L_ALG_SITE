@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<!-- <div class="col-sm">
-											<button class="btn btn-primary" v-on:click="refreshDashboard">Refresh</button>
+												<button class="btn btn-primary" v-on:click="refreshDashboard">Refresh</button>
 	</div> -->
 	
 </div>
@@ -63,6 +63,9 @@
 				logged_users:0,
 				loading:false,
 				intervalid1:'',
+
+
+
 			}
 		},
 		mounted (){
@@ -85,34 +88,49 @@
 							this.loading=false;
 							console.dir(error)
 						})
-							},1000)
+					},1000)
 			},
 		},
+		
 		watch: {
-			users: function(val){
-				this.$notify({ text: 'Wrong password, please try again later' })
+			users: function(newVal, oldVal){
+				if(newVal>oldVal){
+					this.$toasted.show((newVal-oldVal)+' users has registered.')
+				}
 			},
-			logged_users: function(val){
-				this.$notify({ text: 'Wrong password, please try again later' })
+			logged_users: function(newVal, oldVal){
+				if(newVal>oldVal){
+					this.$toasted.show((newVal-oldVal)+ ' user/s has logged in.')
+				}
+				else if(newVal<oldVal){
+					this.$toasted.show((oldVal-newVal)+' user/s has signed out.')
+				}
+			},
+			logged_devices: function(newVal, oldVal){
+				if(newVal>oldVal){
+					this.$toasted.show((newVal-oldVal)+ ' registered devices/s.')
+				}
+				else if(newVal<oldVal){
+					this.$toasted.show((oldVal-newVal)+' device/s removed.')
+				}
+			},
+			admin: function(newVal, oldVal){
+				if(newVal>oldVal){
+					this.$toasted.show((newVal-oldVal)+ ' newly assgned admin.')
+				}
+				else if(newVal<oldVal){
+					this.$toasted.show((oldVal-newVal)+' removed admin.')
+				}
+			},
+			students: function(newVal, oldVal){
+				if(newVal>oldVal){
+					this.$toasted.show((newVal-oldVal)+ ' new student/s registered to the system.')
+				}
+				else if(newVal<oldVal){
+					this.$toasted.show((oldVal-newVal)+' removed student/s from the system.')
+				}
 			}
 		},
-		// computed: {
-											// 	clonedUsers: function(){
-																				// 		return this.users
-											// 	},
-											// 	clonedAdmin: function(){
-																				// 		return this.admin
-											// 	},
-											// 	clonedStudents: function(){
-																				// 		return this.students
-											// 	},
-											// 	clonedLoggedDevices: function(){
-																				// 		return this.logged_devices
-											// 	},
-											// 	clonedLoggedUsers: function(){
-																				// 		return this.logged_users
-											// 	}
-		// }
 		
 	}
 </script>

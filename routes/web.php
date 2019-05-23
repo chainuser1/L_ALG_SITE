@@ -13,8 +13,10 @@
 
 Route::get('/', function () {
     return view('index');
-});
-
+})->name('home');
+Route::get('/home', function () {
+    return view('index');
+})->name('home');
 // Authentication Routes...
 Route::get('login', [
   'as' => 'login',
@@ -71,5 +73,4 @@ Route::prefix('admin')->group(function(){
   Route::get('users','AdminController@getAllUsers')->name('num_users');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
 

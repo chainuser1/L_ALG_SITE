@@ -7,15 +7,27 @@
 
 require('./bootstrap');
 window.$ = require('jquery')
-import Notification from 'vue-notification';
 window.Vue = require('vue');
+import Vue from 'vue'
 import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-Vue.use(Notification);
+import Notification from 'vue-notification';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-Vue.use(VueAxios, axios);//use to make asynchronous request to server 
+import Toasted from 'vue-toasted'
 
+
+Vue.use(VueAxios, axios);//use to make asynchronous request to server 
+Vue.use(VueRouter);
+Vue.use(Notification);
+Vue.use(Toasted, {
+  duration: 9000,
+  action : {
+    text : 'Cancel',
+    onClick : (e, toastObject) => {
+        toastObject.goAway(0);
+    }
+  }
+})
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
