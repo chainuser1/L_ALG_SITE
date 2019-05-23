@@ -46,11 +46,13 @@
 		</div>
 	</div>
 	<!-- <div class="col-sm">
-		<button class="btn btn-primary" v-on:click="refreshDashboard">Refresh</button>
+											<button class="btn btn-primary" v-on:click="refreshDashboard">Refresh</button>
 	</div> -->
+	
 </div>
 </template>
 <script>
+	
 	export default {
 		data (){
 			return {
@@ -68,9 +70,9 @@
 		},
 		methods: {
 			refreshDashboard(){
+					this.loading=true;
 					this.intervalid1 = setInterval(() => {
 						var url=$("meta[name='clostro']").attr('content');
-						this.loading=true;
 						axios.get(url)
 						.then(res => {
 							this.loading=false;
@@ -79,19 +81,38 @@
 							this.admin = res.data.num_admin
 							this.logged_devices=res.data.logged_devices
 							this.logged_users=res.data.logged_users
-
 						}).catch(error => {
 							this.loading=false;
 							console.dir(error)
 						})
-						if(this.users>=1000){
-							this.users=1000+'+';
-						}	
-					},10000)	
+							},1000)
 			},
-			
-
-		}
+		},
+		watch: {
+			users: function(val){
+				this.$notify({ text: 'Wrong password, please try again later' })
+			},
+			logged_users: function(val){
+				this.$notify({ text: 'Wrong password, please try again later' })
+			}
+		},
+		// computed: {
+											// 	clonedUsers: function(){
+																				// 		return this.users
+											// 	},
+											// 	clonedAdmin: function(){
+																				// 		return this.admin
+											// 	},
+											// 	clonedStudents: function(){
+																				// 		return this.students
+											// 	},
+											// 	clonedLoggedDevices: function(){
+																				// 		return this.logged_devices
+											// 	},
+											// 	clonedLoggedUsers: function(){
+																				// 		return this.logged_users
+											// 	}
+		// }
 		
 	}
 </script>

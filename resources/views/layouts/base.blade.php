@@ -21,10 +21,11 @@
 	</head>
 	<body>
 
-		<script src="{{ asset('js/core/jquery.min.js') }}" ></script>
+		<script src="{{ asset('vendor/mdbootstrap/js/jquery-3.4.1.min.js') }}" ></script>
 		<script src="{{ asset('js/manifest.js') }}"></script>
 		<script src="{{ asset('js/vendor.js') }}"></script>
 		<script src="{{ asset('js/app.js') }}" ></script>
+		
 		<div id="preloder">
 			<div class="loader"></div>
 		</div>
@@ -105,7 +106,7 @@ aria-hidden="true">
 					<input type="text" id="defaultForm-username" name="username" class="form-control validate indigo-text">
 					<label data-error="wrong" data-success="right" for="defaultForm-username">Username</label>
 				</div>
-				<div class="md-form mb-4">
+				<div class="md-form mb-5">
 					<i class="fas fa-lock prefix indigo-text"></i>
 					<input type="password" id="defaultForm-pass" name="password" class="form-control validate indigo-text">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
@@ -204,6 +205,7 @@ aria-hidden="true">
 <script type="text/javascript" src="{{ asset('js/rocket-loader.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/fetch_setup.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/auth_fetch.min.js') }}"></script>
 <script type="text/javascript">
 		window.dataLayer = window.dataLayer || [];

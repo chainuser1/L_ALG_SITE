@@ -21,8 +21,12 @@
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/paper-dashboard.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/admin-prime.css') }}">
-	</head>
+		{{-- <link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/mdb.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/mdbootstrap/css/mdb.lite.min.css') }}">
+	 --}}</head>
 	<body>
+		<script src="{{ asset('vendor/mdbootstrap/js/jquery-3.4.1.min.js') }}" ></script>
 		<script src="{{ asset('js/manifest.js') }}"></script>
 		<script src="{{ asset('js/vendor.js') }}"></script>
 		<script src="{{ asset('js/app.js') }}" defer></script>
@@ -55,6 +59,10 @@
 						<li>
 							<i class="nc-icon nc-bank"></i>
 							<a href="#">Upload a Game</a>
+						</li>
+						<li>
+							<i class="nc-icon nc-bank"></i>
+							<a href="#">Upload a Reading Module</a>
 						</li>
 					</ul>
 				</div>
@@ -128,7 +136,9 @@
 				</div>
 			</div>
 			<!-- scripts -->
-			<script src="{{ asset('vendor/mdbootstrap/js/jquery-3.3.1.min.js') }}"></script>
+
+			<script type="text/javascript" src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/plugins/notify.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/bootstrap.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('vendor/mdbootstrap/js/mdb.min.js') }}"></script>
 			<script src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="78225a9936e2aafa5e1583f7-text/javascript"></script>
@@ -141,6 +151,7 @@
 			<script type="text/javascript" src="{{ asset('js/fetch_setup.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/paper-dashboard.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/scrollbar-jquery.min.js') }}"></script>
+
 			<script src="{{ mix('js/app.js') }}"></script>
 		</body>
 	</html>

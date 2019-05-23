@@ -6,14 +6,12 @@
  */
 
 require('./bootstrap');
-
-import 'bootstrap';
-import 'mdbootstrap';
 window.$ = require('jquery')
+import Notification from 'vue-notification';
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
-
+Vue.use(Notification);
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 Vue.use(VueAxios, axios);//use to make asynchronous request to server 

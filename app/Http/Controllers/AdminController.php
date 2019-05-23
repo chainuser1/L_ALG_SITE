@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use App\Session;
 use DB;
+use App\Charts;
 class AdminController extends Controller
 {
 	public function __construct(){
@@ -35,5 +36,9 @@ class AdminController extends Controller
     }
     public function uploadGame(Request $request) {
     	//todo
+    }
+
+    public function getChartOnUsers(Request $request){
+       
     }
 }
